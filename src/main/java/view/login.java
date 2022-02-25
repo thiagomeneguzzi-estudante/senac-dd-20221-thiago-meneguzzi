@@ -12,14 +12,11 @@ public class login {
     private JButton loginButton;
 
     public login() {
-        loginButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(verifyLogin(username.getText(), String.valueOf(password.getPassword()))) {
-                    JOptionPane.showMessageDialog(null, "Bem vindo, "+username.getText());
-                } else {
-                    JOptionPane.showMessageDialog(null, "Seu username ou senha está errado!");
-                }
+        loginButton.addActionListener(e -> {
+            if(verifyLogin(username.getText(), String.valueOf(password.getPassword()))) {
+                JOptionPane.showMessageDialog(null, "Bem vindo, "+username.getText());
+            } else {
+                JOptionPane.showMessageDialog(null, "Seu username ou senha está errado!");
             }
         });
     }
